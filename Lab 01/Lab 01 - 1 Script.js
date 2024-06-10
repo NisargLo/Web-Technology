@@ -11,8 +11,8 @@ else if (c == "*") {
      alert("Multiply = " + (parseInt(a) * parseInt(b)));
 }
 else if (c == "/") {
-     alert("Divide = " + (parseInt(a) - parseInt(b)));
+     alert("Divide = " + (parseInt(a) / parseInt(b)));
 }
 else if (c == "%") {
-     alert("Modulus = " + (parseInt(a) - parseInt(b)));
+     alert("Modulus = " + (parseInt(a) % parseInt(b)));
 }

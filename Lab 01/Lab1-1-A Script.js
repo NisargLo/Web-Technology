@@ -1,3 +1,5 @@
+// WAP in JavaScript to make simple calculator using popup box.
+
 a = prompt("Enter number 1 :");
 b = prompt("Enter number 2 :");
 c = prompt("Enter any operation from '+', '-', '*', '/', '%' :");

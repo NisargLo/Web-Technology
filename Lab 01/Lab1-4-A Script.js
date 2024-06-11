@@ -3,7 +3,7 @@
 a=0;
 b=1;
 c=0;
-n = prompt("Enter number :");
+n=prompt("Enter number :");
 document.write("<label>Fibonacci series : </label>");
 for(i=1;i<=n;i++){
      if(i!=n){

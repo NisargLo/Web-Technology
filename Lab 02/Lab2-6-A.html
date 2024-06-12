@@ -1,0 +1,52 @@
+<!--  Write an HTML page with JavaScript that takes a number from popup box in the range 0-999 and display it in words. If the number is out of range, it should show “out of range” and if it is not a number ,it should show “not a number” message in the result box. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab2-6-A</title>
+</head>
+<body>
+     <script>
+          inputNumber = parseInt(prompt("Enter a number between (0-999) :"));
+          if(isNaN(inputNumber)){
+               alert("Not a number");
+          }
+          else if(inputNumber<0 || inputNumber>999){
+               alert("Out of range");
+          }
+          else{
+               if(inputNumber == 0){
+                    alert("zero");
+               }
+               else{
+                    const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+                    const tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+                    const teens = ["", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+                    result="";
+                    if(inputNumber >= 100){
+                         result += ones[Math.floor(inputNumber/100)] + " hundred ";
+                         inputNumber %= 100;
+                    }
+                    if(inputNumber >= 20){
+                         result += (tens[Math.floor(inputNumber/10)] + " ");
+                         inputNumber %= 10;
+                    }
+                    if(inputNumber > 10){
+                         result += (teens[Math.floor(inputNumber-10)] + " ");
+                         inputNumber = 0;
+                    }
+                    if(inputNumber == 10){
+                         result += (tens[1] + " ");
+                         inputNumber -= 10; 
+                    }
+                    if(inputNumber > 0){
+                         result += (ones[inputNumber] + " ");
+                    }
+                    alert(result.trim());
+               }
+          }
+     </script> 
+</body>
+</html>

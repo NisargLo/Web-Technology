@@ -1,0 +1,18 @@
+<!-- Write an HTML ƒile with JavaScript that ƒinds position of ƒirst occurrence of vowel “a”, last occurrence of vowel “a” in a given word and returns the string between them. For example, ajanta - then script would return ƒirst occurrence of “a” - that is position 1 and last occurrence-6 and string between them is “jant”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab2-7-B</title>
+</head>
+<body>
+     <script>
+          str=prompt("Enter word :");
+          f=str.indexOf('a');
+          l=str.lastIndexOf('a');
+          alert(str.substring(f+1,l));
+     </script>
+</body>
+</html>

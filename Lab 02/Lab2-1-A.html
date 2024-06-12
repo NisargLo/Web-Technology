@@ -7,14 +7,26 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lab2-1-A</title>
      <style>
-          label{
+          label {
                font-size: 2rem;
           }
      </style>
 </head>
 <body>
      <center>
-          <script src="./Lab2-1-A Script.js">
+          <script>
+               n = prompt("Enter number :");
+               document.write("<label>Factors : </label>")
+               for (i = 1; i <= n; i++) {
+                    if (n % i == 0) {
+                         if (i != n) {
+                              document.write("<label>" + i + ", </label>");
+                         }
+                         else {
+                              document.write("<label>" + i + "</label>");
+                         }
+                    }
+               }
           </script>
      </center>
 </body>

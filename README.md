@@ -1,3 +1,3 @@
-<i><h1>Semester - 3</h1>
-<h1>Subject : Web Technology</h1>
-<h1>Programming Language : HTML-5, CSS-3 & Javascript-ES6</h1></i>
+<i><h2>Semester - 3</h2>
+<h2>Subject : Web Technology</h2>
+<h2>Programming Language : HTML, CSS & Javascript</h2></i>

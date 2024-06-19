@@ -16,16 +16,16 @@
 
 <body>
     <script>
-        const faculties = [];
-        const n = parseInt(prompt("How many faculties are there:"));
+        faculties = [];
+        n = parseInt(prompt("How many faculties are there:"));
         for (let i = 0; i < n; i++) {
-            const faculty = {};
+            faculty = {};
             faculty.name = prompt("Enter faculty " + (i + 1) + " name :");
             faculty.subject = prompt("Enter faculty " + (i + 1) + " subject :");
             faculties.push(faculty);
         }
         document.write("<center><h1>Faculties Table :</h1></br><table align=center border=1 cellpadding=5 cellspacing=5>");
-        for (const faculty of faculties) {
+        for (faculty of faculties) {
             document.write("<tr>");
             document.write("<td>" + faculty.name + "</td>");
             document.write("<td>" + faculty.subject + "</td>");

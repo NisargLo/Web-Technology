@@ -12,32 +12,38 @@
 <body>
     <script>
         n = parseInt(prompt("How many elements will you enter :"));
-        let a = [n];
+        a = [];
         for (i = 0; i < n; i++) {
             a[i] = prompt("Enter element " + (i + 1) + " :");
         }
-        console.log("Initial Array : " + a);
+        console.log("Initial Array : [" + a + "]");
         a.sort();
         console.log("sort() : " + a);
 
         _push = prompt("Enter element to push :");
         a.push(_push);
-        console.log("push(" + _push + ") : " + a);
+        console.log("push(" + _push + ") : [" + a + "]");
 
         _unshift = prompt("Enter element to unshift :");
         a.unshift(_unshift);
-        console.log("unshift(" + _unshift + ") : " + a);
+        console.log("unshift(" + _unshift + ") : [" + a + "]");
 
         a.pop();
-        console.log("pop() : " + a);
+        console.log("pop() : [" + a + "]");
 
         a.shift();
-        console.log("shift() : " + a);
+        console.log("shift() : [" + a + "]");
 
-        s1 = prompt("Enter starting element to slice() :");
-        s2 = prompt("Enter ending element to slice() :");
-        temp1 = a.slice(s1, s2);
-        console.log("slice(" + s1 + "," + s2 + ") : " + temp1);
+        s1 = prompt("Enter starting index of element to slice() :");
+        s2 = prompt("Enter ending index of element to slice() :");
+        temp = a.slice(s1, s2 + 1);
+        console.log("Element stored in variable 'temp' by slice(" + s1 + "," + s2 + ") : " + temp);
+
+        s1 = prompt("Enter starting index of element to splice() :");
+        s2 = prompt("How many elements to remove after index " + s1 + " :");
+        removedElements = a.splice(s1, s2, "Apple", "Mango");
+        console.log("Element Removed by splice(" + s1 + "," + s2 + ") : " + removedElements);
+        console.log("After splice() : [" + a + "]");
     </script>
 </body>
 

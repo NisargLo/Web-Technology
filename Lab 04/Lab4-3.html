@@ -1,0 +1,42 @@
+<!--  WAP to display students stored in array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab4-3</title>
+     <style>
+          th,
+          td {
+               font-size: 2rem;
+          }
+     </style>
+</head>
+
+<body>
+     <script>
+          students = [];
+          n = parseInt(prompt("How many students are there :"));
+          for (i = 0; i < n; i++) {
+               student = {};
+               student.name = prompt("Enter student " + (i + 1) + " name :");
+               student.age = prompt("Enter student " + (i + 1) + " age :");
+               student.rollno = prompt("Enter student " + (i + 1) + " rollno :");
+               students.push(student);
+          }
+          document.write("<center><h1>Students Table :</h1></br><table align=center border=2 cellpadding=5 cellspacing=5>");
+          document.write("<tr><th>Student Name</th>");
+          document.write("<th>Age</th>");
+          document.write("<th>Roll No.</th></tr>");
+          for (student of students) {
+               document.write("<tr><td>" + student.name + "</td>");
+               document.write("<td>" + student.age + "</td>");
+               document.write("<td>" + student.rollno + "</td></tr>");
+          }
+          document.write("</table></center>");
+     </script>
+</body>
+
+</html>

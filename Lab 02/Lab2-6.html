@@ -2,51 +2,54 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lab2-6</title>
 </head>
+
 <body>
      <script>
           inputNumber = parseInt(prompt("Enter a number between (0-999) :"));
-          if(isNaN(inputNumber)){
+          if (isNaN(inputNumber)) {
                alert("Not a number");
           }
-          else if(inputNumber<0 || inputNumber>999){
+          else if (inputNumber < 0 || inputNumber > 999) {
                alert("Out of range");
           }
-          else{
-               if(inputNumber == 0){
+          else {
+               if (inputNumber == 0) {
                     alert("zero");
                }
-               else{
+               else {
                     const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
                     const tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
                     const teens = ["", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-                    result="";
-                    if(inputNumber >= 100){
-                         result += ones[Math.floor(inputNumber/100)] + " hundred ";
+                    result = "";
+                    if (inputNumber >= 100) {
+                         result += ones[Math.floor(inputNumber / 100)] + " hundred ";
                          inputNumber %= 100;
                     }
-                    if(inputNumber >= 20){
-                         result += (tens[Math.floor(inputNumber/10)] + " ");
+                    if (inputNumber >= 20) {
+                         result += (tens[Math.floor(inputNumber / 10)] + " ");
                          inputNumber %= 10;
                     }
-                    if(inputNumber > 10){
-                         result += (teens[Math.floor(inputNumber-10)] + " ");
+                    if (inputNumber > 10) {
+                         result += (teens[Math.floor(inputNumber - 10)] + " ");
                          inputNumber = 0;
                     }
-                    if(inputNumber == 10){
+                    if (inputNumber == 10) {
                          result += (tens[1] + " ");
-                         inputNumber -= 10; 
+                         inputNumber -= 10;
                     }
-                    if(inputNumber > 0){
+                    if (inputNumber > 0) {
                          result += (ones[inputNumber] + " ");
                     }
                     alert(result.trim());
                }
           }
-     </script> 
+     </script>
 </body>
+
 </html>

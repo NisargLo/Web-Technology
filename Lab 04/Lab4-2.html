@@ -1,0 +1,44 @@
+<!-- Demonstrate different array functions like push, pop, shift, unshift, splice, sort etc… -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4-2</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("How many elements will you enter :"));
+        let a = [n];
+        for (i = 0; i < n; i++) {
+            a[i] = prompt("Enter element " + (i + 1) + " :");
+        }
+        console.log("Initial Array : " + a);
+        a.sort();
+        console.log("sort() : " + a);
+
+        _push = prompt("Enter element to push :");
+        a.push(_push);
+        console.log("push(" + _push + ") : " + a);
+
+        _unshift = prompt("Enter element to unshift :");
+        a.unshift(_unshift);
+        console.log("unshift(" + _unshift + ") : " + a);
+
+        a.pop();
+        console.log("pop() : " + a);
+
+        a.shift();
+        console.log("shift() : " + a);
+
+        s1 = prompt("Enter starting element to slice() :");
+        s2 = prompt("Enter ending element to slice() :");
+        temp1 = a.slice(s1, s2);
+        console.log("slice(" + s1 + "," + s2 + ") : " + temp1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!-- Write a JavaScript that uses a loop that searches a word in sentence held in an array, returning the index of the word. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3-5</title>
+</head>
+
+<body>
+    <script>
+        n = prompt("How many words are there in your sentence :");
+        let a = [n];
+        for (i = 0; i < n; i++) {
+            a[i] = prompt("Enter word " + (i + 1) + " :");
+        }
+        s = prompt("Enter word to search :");
+        for (i = 0; i < n; i++) {
+            if (s == a[i]) {
+                alert("Index = " + i);
+            }
+        }
+    </script>
+</body>
+
+</html>

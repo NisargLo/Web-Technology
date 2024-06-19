@@ -1,0 +1,27 @@
+<!-- Demonstrate the use of array to ƒind maximum number. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3-1</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("How many numbers will you enter :"));
+        let a = [n];
+        for (i = 0; i < n; i++) {
+            a[i] = prompt("Enter number " + (i + 1) + " :");
+        }
+        let res = a[0];
+        for (i = 0; i < n; i++) {
+            res = Math.max(res, a[i]);
+        }
+        alert("Max = " + res);
+    </script>
+</body>
+
+</html>

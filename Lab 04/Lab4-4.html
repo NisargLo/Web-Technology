@@ -1,0 +1,42 @@
+<!-- WAP to display products stored in array -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab4-4</title>
+     <style>
+          th,
+          td {
+               font-size: 2rem;
+          }
+     </style>
+</head>
+
+<body>
+     <script>
+          products = [];
+          n = parseInt(prompt("Enter number of products :"));
+          for (i = 0; i < n; i++) {
+               product = {};
+               product.name = prompt("Enter product name :");
+               product.price = parseFloat(prompt("Enter product price (in $) :"));
+               product.expiry_date = prompt("Enter product expiry date :");
+               products.push(product);
+          }
+          document.write("<center><h1>Products Table :</h1><br><table border=2 align=center cellpadding=5 cellspacing=5>");
+          document.write("<tr><th>Product Name</th>");
+          document.write("<th>Price (in $)</th>");
+          document.write("<th>Expiry Date</th></tr>");
+          for (product of products) {
+               document.write("<tr><td>" + product.name + "</td>");
+               document.write("<td>$" + product.price + "</td>");
+               document.write("<td>" + product.expiry_date + "</td></tr>");
+          }
+          document.write("</table></center>");
+     </script>
+</body>
+
+</html>

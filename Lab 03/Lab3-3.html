@@ -1,0 +1,42 @@
+<!-- WAP to read an array from the user and sort them using bubble sort -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3-3</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("How many numbers will you enter :"));
+        let a = [n];
+        for (i = 0; i < n; i++) {
+            a[i] = prompt("Enter number " + (i + 1) + " :");
+        }
+        console.log("Initial Array : ", a);
+        for (i = 0; i < n; i++) {
+            for (j = i + 1; j < n; j++) {
+                if (a[i] > a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+                /*
+                    Or...
+                    
+                    if(a[j]>a[j+1]){
+                        temp=a[j];
+                        a[j]=a[j+1];
+                        a[j+1]=temp;
+                    }
+                */
+            }
+        }
+        alert("Array in ascending order (Bubble Sort) : [" + a + "]");
+    </script>
+</body>
+
+</html>

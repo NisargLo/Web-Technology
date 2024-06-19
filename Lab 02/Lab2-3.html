@@ -22,54 +22,57 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab2-3</title>
     <style>
-        label{
+        label {
             font-size: 2rem;
         }
     </style>
 </head>
+
 <body>
     <script>
-        n=prompt("Enter number :");
+        n = prompt("Enter number :");
         document.write("<label>Pattern 1 :-</label><br><br>");
-        for(i=1;i<=n;i++){
-            for(j=1;j<=i;j++){
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= i; j++) {
                 document.write("<label>*&nbsp;</label>");
             }
             document.write("<br>");
         }
-        for(i=1;i<=3;i++){
+        for (i = 1; i <= 3; i++) {
             document.write("<br>");
         }
 
         document.write("<label>Pattern 2 :-</label><br><br>");
-        for(i=1;i<=n;i++){
-            for(j=n;j>=i;j--){
+        for (i = 1; i <= n; i++) {
+            for (j = n; j >= i; j--) {
                 document.write("&nbsp;&nbsp;&nbsp;");
             }
-            for(k=i;k>=1;k--){
+            for (k = i; k >= 1; k--) {
                 document.write("<label>*&nbsp;</label>");
             }
             document.write("<br>");
         }
-        for(i=1;i<=3;i++){
+        for (i = 1; i <= 3; i++) {
             document.write("<br>");
         }
 
         document.write("<label>Pattern 3 :-</label><br><br>");
-        for(i=1;i<=n;i++){
-            for(j=1;j<=n-i;j++){
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= n - i; j++) {
                 document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
             }
-            for(k=1;k<=i;k++){
+            for (k = 1; k <= i; k++) {
                 document.write("<label>*&nbsp;</label>");
             }
             document.write("<br>");
         }
     </script>
 </body>
+
 </html>

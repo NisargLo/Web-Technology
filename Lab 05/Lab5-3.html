@@ -1,0 +1,193 @@
+<!-- WAP to create a scientific graphical calculator using HTML and JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab5-3</title>
+     <style>
+          * {
+               box-sizing: border-box;
+               font-size: 1.2rem;
+          }
+
+          h2 {
+               font-size: 3.5rem;
+               margin: 1rem 0px 1rem 0px;
+          }
+
+          input {
+               width: 30rem;
+               height: 10vh;
+               border: 2px solid black;
+               border-radius: 10px;
+               padding-left: 1rem;
+               padding-right: 1rem;
+          }
+
+          button {
+               width: 5rem;
+               height: 10vh;
+               font-size: 1.4rem;
+               border: 0.5px solid black;
+               border-radius: 10px;
+          }
+     </style>
+</head>
+
+<body>
+     <center>
+          <h2>Scientific Calculator</h2>
+          <div>
+               <form method="post">
+                    <input type="text" id="Box">
+               </form><br><br>
+          </div>
+          <div>
+               <button type="button" id="X_Inverse" onclick="X_Inverse()">x<sup>-1</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="X_Power" onclick="X_Power()">x<sup>n</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="Square_Root" onclick="Square_Root()">sqrt</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="My_Log" onclick="My_Log()">log</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="sin_func" onclick="sin_func()">sin</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="cos_func" onclick="cos_func()">cos</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="tan_func" onclick="tan_func()">tan</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="My_Ln" onclick="My_Ln()">ln</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="seven" value="7" onclick="display(7)">7</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="eight" value="8" onclick="display(8)">8</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="nine" value="9" onclick="display(9)">9</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="divide" value="/" onclick="display('/')">/</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="four" value="4" onclick="display(4)">4</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="five" value="5" onclick="display(5)">5</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="six" value="6" onclick="display(6)">6</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="multiply" value="*" onclick="display('*')">X</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="one" value="1" onclick="display(1)">1</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="two" value="2" onclick="display(2)">2</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="three" value="3" onclick="display(3)">3</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="plus" value="+" onclick="display('+')">+</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="plusMinus"
+                    onclick="plus_minus()"><sup>+</sup>/<sub>-</sub></button>&nbsp;&nbsp;&nbsp;
+               <button id="zero" value="0" onclick="display(0)">0</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="dot" value="." onclick="display('.')">.</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="minus" value="-" onclick="display('-')">-</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="modulo" value="%" onclick="display('%')">%</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="clearfunction" onclick="clearFunction()">C</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="allclear" onclick="allClear()">AC</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="equalto" onclick="equalTo()">=</button><br><br>
+          </div>
+     </center>
+     <script>
+          function display(n) {
+               Box.value += n;
+          }
+          function plus_minus() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = -parseFloat(Box.value);
+               }
+          }
+          function equalTo() {
+               Box.value = eval(Box.value);
+          }
+          function allClear() {
+               Box.value = "";
+          }
+          function clearFunction() {
+               Box.value = Box.value.slice(0, -1);
+          }
+          function X_Inverse() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else if (inputValue === 0) {
+                    Box.value = "Error: Division by zero";
+               } 
+               else {
+                    Box.value = 1 / inputValue;
+               }
+          }
+          function X_Power() {
+               inputValue = parseFloat(Box.value);
+               e = prompt("Enter exponent :");
+               if (isNaN(inputValue) || isNaN(e)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.pow(inputValue, e);
+               }
+          }
+          function Square_Root() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.pow(inputValue, 0.5);
+               }
+          }
+          function My_Log() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.log10(inputValue);
+               }
+          }
+          function My_Ln() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.log(inputValue, Math.E);
+               }
+          }
+          function sin_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.sin(inputValue);
+               }
+          }
+          function cos_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.cos(inputValue);
+               }
+          }
+          function tan_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               } 
+               else {
+                    Box.value = Math.tan(inputValue);
+               }
+          }
+     </script>
+</body>
+
+</html>

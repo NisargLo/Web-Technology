@@ -19,7 +19,7 @@
           }
 
           input {
-               width: 50%;
+               width: 30rem;
                height: 10vh;
                border: 2px solid black;
                border-radius: 10px;
@@ -28,7 +28,7 @@
           }
 
           button {
-               width: 10%;
+               width: 5rem;
                height: 12vh;
                font-size: 1.5rem;
                border: 0.5px solid black;
@@ -40,36 +40,42 @@
 <body>
      <center>
           <h2>Basic Calculator</h2>
-          <form onsubmit="return false">
-               <div class="container">
-                    <input type="text" id="Box"><br><br>
-
-                    <button type="button" id="modulo" value="%" onclick="display('%')">RD</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="clearfunction" onclick="clearFunction()">C</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="allclear" onclick="allClear()">AC</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="divide" value="/" onclick="display('/')">/</button><br><br>
-
-                    <button type="button" id="seven" value="7" onclick="display(7)">7</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="eight" value="8" onclick="display(8)">8</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="nine" value="9" onclick="display(9)">9</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="multiply" value="*" onclick="display('*')">*</button><br><br>
-
-                    <button type="button" id="four" value="4" onclick="display(4)">4</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="five" value="5" onclick="display(5)">5</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="six" value="6" onclick="display(6)">6</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="minus" value="-" onclick="display('-')">-</button><br><br>
-
-                    <button type="button" id="one" value="1" onclick="display('1')">1</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="two" value="2" onclick="display('2')">2</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="three" value="3" onclick="display(3)">3</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="plus" value="+" onclick="display('+')">+</button><br><br>
-                    
-                    <button type="button" id="plusMinus" onclick="plus_minus()"><sup>+</sup>/<sub>-</sub></button>&nbsp;&nbsp;&nbsp;
-                    <button id="zero" value="0" onclick="display(0)">0</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="dot" value="." onclick="display('.')">.</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="equalto" onclick="equalTo()">=</button><br><br>
-               </div>
-          </form>
+          <div>
+               <form method="post">
+                    <input type="text" id="Box">
+               </form><br><br>
+          </div>
+          <div>
+               <button type="button" id="modulo" value="%" onclick="display('%')">%</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="clearfunction" onclick="clearFunction()">C</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="allclear" onclick="allClear()">AC</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="divide" value="/" onclick="display('/')">/</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="seven" value="7" onclick="display(7)">7</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="eight" value="8" onclick="display(8)">8</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="nine" value="9" onclick="display(9)">9</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="multiply" value="*" onclick="display('*')">X</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="four" value="4" onclick="display(4)">4</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="five" value="5" onclick="display(5)">5</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="six" value="6" onclick="display(6)">6</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="minus" value="-" onclick="display('-')">-</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="one" value="1" onclick="display(1)">1</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="two" value="2" onclick="display(2)">2</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="three" value="3" onclick="display(3)">3</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="plus" value="+" onclick="display('+')">+</button><br><br>
+          </div>
+          <div>
+               <button type="button" id="plusMinus"
+                    onclick="plus_minus()"><sup>+</sup>/<sub>-</sub></button>&nbsp;&nbsp;&nbsp;
+               <button id="zero" value="0" onclick="display(0)">0</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="dot" value="." onclick="display('.')">.</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="equalto" onclick="equalTo()">=</button><br><br>
+          </div>
      </center>
      <script>
           function display(n) {

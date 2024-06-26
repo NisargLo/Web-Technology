@@ -47,46 +47,52 @@
           </div>
           <div>
                <button type="button" id="X_Inverse" onclick="X_Inverse()">x<sup>-1</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="X_Power" onclick="X_2Power()">x<sup>2</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="X_Power" onclick="X_3Power()">x<sup>3</sup></button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="X_Power" onclick="X_Power()">x<sup>n</sup></button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="Square_Root" onclick="Square_Root()">sqrt</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="My_Log" onclick="My_Log()">log</button><br><br>
+               <button type="button" id="Square_Root" onclick="Square_Root()">sqrt</button><br><br>
           </div>
           <div>
                <button type="button" id="sin_func" onclick="sin_func()">sin</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="cos_func" onclick="cos_func()">cos</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="tan_func" onclick="tan_func()">tan</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="My_Ln" onclick="My_Ln()">ln</button><br><br>
+               <button type="button" id="My_Log" onclick="My_Log()">log</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="My_Combination" onclick="My_Combination()"><sup>n</sup>P<sub>r</sub></button><br><br>
           </div>
           <div>
+               <button type="button" id="asin_func" onclick="asin_func()">sin<sup>-1</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="acos_func" onclick="acos_func()">cos<sup>-1</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="atan_func" onclick="atan_func()">tan<sup>-1</sup></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="My_Ln" onclick="My_Ln()">ln</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="My_Combination" onclick="My_Combination()"><sup>n</sup>C<sub>r</sub></button><br><br>
+          </div>
+          <div>
+               <button type="button" id="six" value="6" onclick="display(6)">6</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="seven" value="7" onclick="display(7)">7</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="eight" value="8" onclick="display(8)">8</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="nine" value="9" onclick="display(9)">9</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="divide" value="/" onclick="display('/')">/</button><br><br>
           </div>
           <div>
+               <button type="button" id="two" value="2" onclick="display(2)">2</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="three" value="3" onclick="display(3)">3</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="four" value="4" onclick="display(4)">4</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="five" value="5" onclick="display(5)">5</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="six" value="6" onclick="display(6)">6</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="multiply" value="*" onclick="display('*')">X</button><br><br>
           </div>
           <div>
+               <button type="button" id="plusMinus" onclick="plus_minus()"><sup>+</sup>/<sub>-</sub></button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="dot" value="." onclick="display('.')">.</button>&nbsp;&nbsp;&nbsp;
+               <button id="zero" value="0" onclick="display(0)">0</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="one" value="1" onclick="display(1)">1</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="two" value="2" onclick="display(2)">2</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="three" value="3" onclick="display(3)">3</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="plus" value="+" onclick="display('+')">+</button><br><br>
           </div>
           <div>
-               <button type="button" id="plusMinus"
-                    onclick="plus_minus()"><sup>+</sup>/<sub>-</sub></button>&nbsp;&nbsp;&nbsp;
-               <button id="zero" value="0" onclick="display(0)">0</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="dot" value="." onclick="display('.')">.</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="minus" value="-" onclick="display('-')">-</button><br><br>
-          </div>
-          <div>
-               <button type="button" id="modulo" value="%" onclick="display('%')">%</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="clearfunction" onclick="clearFunction()">C</button>&nbsp;&nbsp;&nbsp;
                <button type="button" id="allclear" onclick="allClear()">AC</button>&nbsp;&nbsp;&nbsp;
-               <button type="button" id="equalto" onclick="equalTo()">=</button><br><br>
+               <button type="button" id="equalto" onclick="equalTo()">=</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="modulo" value="%" onclick="display('%')">%</button>&nbsp;&nbsp;&nbsp;
+               <button type="button" id="minus" value="-" onclick="display('-')">-</button><br><br>
           </div>
      </center>
      <script>
@@ -97,7 +103,7 @@
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = -parseFloat(Box.value);
                }
@@ -115,10 +121,10 @@
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else if (inputValue === 0) {
                     Box.value = "Error: Division by zero";
-               } 
+               }
                else {
                     Box.value = 1 / inputValue;
                }
@@ -128,16 +134,34 @@
                e = prompt("Enter exponent :");
                if (isNaN(inputValue) || isNaN(e)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.pow(inputValue, e);
+               }
+          }
+          function X_2Power() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               }
+               else {
+                    Box.value = Math.pow(inputValue, 2);
+               }
+          }
+          function X_3Power() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               }
+               else {
+                    Box.value = Math.pow(inputValue, 3);
                }
           }
           function Square_Root() {
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.pow(inputValue, 0.5);
                }
@@ -146,7 +170,7 @@
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.log10(inputValue);
                }
@@ -155,7 +179,7 @@
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.log(inputValue, Math.E);
                }
@@ -164,28 +188,79 @@
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.sin(inputValue);
+               }
+          }
+          function asin_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               }
+               else {
+                    Box.value = Math.asin(inputValue);
                }
           }
           function cos_func() {
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.cos(inputValue);
+               }
+          }
+          function acos_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               }
+               else {
+                    Box.value = Math.acos(inputValue);
                }
           }
           function tan_func() {
                inputValue = parseFloat(Box.value);
                if (isNaN(inputValue)) {
                     Box.value = "Error";
-               } 
+               }
                else {
                     Box.value = Math.tan(inputValue);
                }
+          }
+          function atan_func() {
+               inputValue = parseFloat(Box.value);
+               if (isNaN(inputValue)) {
+                    Box.value = "Error";
+               }
+               else {
+                    Box.value = Math.atan(inputValue);
+               }
+          }
+          function My_Combination() {
+               inputValue = parseFloat(Box.value);
+               r = parseInt(prompt("Enter r:"));
+               if (isNaN(inputValue) || isNaN(r) || r < 0 || !Number.isInteger(r)) {
+                    Box.value = "Invalid input. Please enter a valid non-negative integer for r.";
+               }
+               else {
+                    n = inputValue;
+                    if (n < r) {
+                         Box.value = "Error: n must be greater than or equal to r.";
+                    }
+                    else {
+                         var result = My_factorial(n) / (My_factorial(r) * My_factorial(n - r));
+                         Box.value = result;
+                    }
+               }
+          }
+          function My_factorial(n) {
+               m = 1;
+               for (i = n; i >= 1; i--) {
+                    m *= i;
+               }
+               return m;
           }
      </script>
 </body>

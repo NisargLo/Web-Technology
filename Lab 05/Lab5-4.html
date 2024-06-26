@@ -1,0 +1,149 @@
+<!-- 
+     Write a JavaScript program to validate user data given from the HTML form :
+          1) username must be of minimum 8 characters
+          2) password must contain at least 1 digit and 1 special character and should be between 8-12 characters
+          3) password and repeat password must be same
+          4) age must be greater than 18 (calculate from date of birth)
+          5) enrollment must be of 11 digits
+          6) email validation 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab5-4</title>
+     <style>
+          .wholebody {
+               padding: 2rem;
+          }
+
+          .elements {
+               margin-bottom: 1.5rem;
+          }
+
+          h1 {
+               font-size: 3rem;
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               margin-top: 0px;
+          }
+
+          label {
+               font-size: 2rem;
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          }
+
+          input {
+               font-size: 1.5rem;
+               padding-left: 1rem;
+               padding-right: 1rem;
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               width: 20rem;
+          }
+
+          button {
+               font-size: 1.5rem;
+               padding: 0.5rem;
+               border-radius: 10px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="wholebody">
+          <h1>Form Validation :-</h1>
+          <form id="myForm" method="post">
+               <div class="elements">
+                    <label>Username : </label>
+                    <input type="text" placeholder="Enter Username" id="username">
+               </div>
+               <div class="elements">
+                    <label>E-Mail : </label>
+                    <input type="email" placeholder="Enter E-Mail" id="email">
+               </div>
+               <div class="elements">
+                    <label>Password : </label>
+                    <input type="password" placeholder="Enter Password" id="password">
+               </div>
+               <div class="elements">
+                    <label>Repeat Password : </label>
+                    <input type="password" placeholder="Enter Password Again" id="repeatpassword">
+               </div>
+               <div class="elements">
+                    <label for="dobInput">Date of Birth : </label>
+                    <input type="date" id="dobInput">
+               </div>
+               <div class="elements">
+                    <label>Enrollment Number : </label>
+                    <input type="number" placeholder="Enter Enrollment Number" id="enrollmentnumber">
+               </div>
+               <div class="elements">
+                    <button type="submit">Submit</button>
+               </div>
+          </form>
+     </div>
+     <script>
+          pass_pattern1 = /[!@#$%^&*()_+-=:";'<>,./?]{1,}[0-9]{1,}/;
+          email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          us = document.getElementById("username");
+          em = document.getElementById("email");
+          dobInput = document.getElementById("dobInput");
+          pass = document.getElementById("password");
+          rs = document.getElementById("repeatpassword");
+          en = document.getElementById("enrollmentnumber");
+
+          document.getElementById("myForm").addEventListener("submit", function(e) {
+               e.preventDefault();
+               validateUsername();
+               validateEmail();
+               validatePassword();
+               validateRepeatPassword();
+               validateDOB();
+               validateEnrollmentNo();
+          });
+          function validateUsername() {
+               if (us.value.length < 8) {
+                    alert("Username must be at least 8 characters.");
+               }
+          }
+          function validateEmail() {
+               if (!email_pattern.test(em.value)) {
+                    alert("Enter valid email");
+               }
+          }
+          function validatePassword() {
+               if (pass.value.length < 8 || pass.value.length > 12) {
+                    alert("Password must be between 8-12 characters.");
+               }
+               if (!pass_pattern1.test(pass.value)) {
+                    alert("Password must contain any 1 number & 1 special character.");
+               }
+          }
+          function validateRepeatPassword() {
+               if (rs.value.length === 0) {
+                    alert("Enter password again.");
+               } else if (pass.value !== rs.value) {
+                    alert("Password does not match.");
+               }
+          }
+          function validateDOB() {
+               let dob = new Date(dobInput.value);
+               let today = new Date();
+               let ageInMillis = today - dob;
+               let ageInYears = ageInMillis / (1000 * 60 * 60 * 24 * 365.25);
+               let roundedAge = Math.floor(ageInYears);
+               if (roundedAge < 18) {
+                    alert("Age must be 18 years or older.");
+               }
+          }
+          function validateEnrollmentNo() {
+               if (en.value.length !== 11) {
+                    alert("Enter valid enrollment number.");
+               }
+          }
+     </script>
+</body>
+
+</html>

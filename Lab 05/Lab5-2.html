@@ -67,10 +67,10 @@
           </form>
      </div>
      <script>
-          pass_pattern1 = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=:";'<>,./?]).{8,12}$/;
-          pass_regex = RegExp(pass_pattern1);
+          pass_pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=:";'<>,./?]).{8,12}$/;
+          pass_regex = new RegExp(pass_pattern);
           email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          email_regex = RegExp(email_pattern);
+          email_regex = new RegExp(email_pattern);
           us = document.getElementById("username");
           em = document.getElementById("email");
           pass = document.getElementById("password");

@@ -1,0 +1,37 @@
+<!-- 
+     Write a JavaScript that handles following keyboard events. 
+     Add necessary elements.
+     JavaScript gives the key code for the key pressed.
+     If the key pressed is “a”,”e”,”i”,”o”,”u”, the script should announce that vowel is pressed.
+     When the key is released background should change to blue. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab6-9</title>
+</head>
+
+<body id="wholebody" style="transition: background-color 0.3s ease;">
+     <script>
+          s = "aeiouAEIOU";
+          document.addEventListener('keypress', function (event) {
+               if (s.includes(event.key)) {
+                    console.log("Vowel Pressed - " + event.key);
+               }
+          });
+          document.addEventListener('keyup', function (event) {
+               if (s.includes(event.key) && wholebody.style.backgroundColor == "white") {
+                    wholebody.style.backgroundColor = "blue";
+               }
+               else {
+                    wholebody.style.backgroundColor = "white";
+               }
+          });
+     </script>
+</body>
+
+</html>

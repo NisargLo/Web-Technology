@@ -1,0 +1,30 @@
+<!-- WAP to recognize which mouse event is ƒired. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab6-2</title>
+</head>
+
+<body>
+     <script>
+          document.addEventListener('click', () => display('onclick'));
+          document.addEventListener('contextmenu', () => display('oncontextmenu'));
+          document.addEventListener('dblclick', () => display('ondblclick'));
+          document.addEventListener('mousedown', () => display('onmousedown'));
+          document.addEventListener('mouseenter', () => display('onmouseenter'));
+          document.addEventListener('mouseleave', () => display('onmouseleave'));
+          document.addEventListener('mousemove', () => display('onmousemove'));
+          document.addEventListener('mouseout', () => display('onmouseout'));
+          document.addEventListener('mouseover', () => display('onmouseover'));
+          document.addEventListener('mouseup', () => display('onmouseup'));
+          function display(identity){
+               console.log("Mouse Action : "+identity);
+          }
+     </script>
+</body>
+
+</html>

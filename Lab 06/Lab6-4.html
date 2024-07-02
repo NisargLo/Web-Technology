@@ -1,0 +1,90 @@
+<!-- WAP to recognize which form event is ƒired. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          * {
+               font-size: 1.5rem;
+          }
+
+          button {
+               width: 10rem;
+               height: 5rem;
+               border: 1px solid black;
+               border-radius: 10px;
+          }
+
+          body {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+     </style>
+</head>
+
+<body>
+     <center>
+          <form id="myForm" method="post" onsubmit="return false;">
+               <label for="name">Name:</label>
+               <input type="text" id="nameInput" placeholder="Enter Name"><br><br>
+               <textarea placeholder="Enter Address" id="addressInput"></textarea><br><br>
+               <button type="submit" id="submit">Submit</button>
+               <button type="reset" id="reset">Reset</button>
+          </form>
+     </center>
+
+     <script>
+          document.getElementById('myForm').addEventListener('submit', function (e) {
+               e.preventDefault();
+               display('onsubmit');
+          });
+
+          document.getElementById('myForm').addEventListener('reset', function () {
+               display('onreset');
+          });
+
+          document.getElementById('nameInput').addEventListener('blur', function () {
+               display('onblur');
+          });
+
+          document.getElementById('nameInput').addEventListener('focus', function () {
+               display('onfocus');
+          });
+
+          document.getElementById('addressInput').addEventListener('focus', function () {
+               display('onfocus');
+          });
+
+          document.getElementById('submit').addEventListener('focus', function () {
+               display('onfocus');
+          });
+
+          document.getElementById('reset').addEventListener('focus', function () {
+               display('onfocus');
+          });
+
+          document.getElementById('nameInput').addEventListener('select', function () {
+               display('onselect');
+          });
+
+          document.getElementById('addressInput').addEventListener('select', function () {
+               display('onselect');
+          });
+
+          document.getElementById('myForm').addEventListener('change', function () {
+               display('onchange');
+          });
+
+          function display(action) {
+               console.log("Form Action: " + action);
+          }
+     </script>
+</body>
+
+
+</html>

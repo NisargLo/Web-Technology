@@ -1,0 +1,51 @@
+<!-- WAP to prepare student registration form and validate it using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab6-5</title>
+     <style>
+          input {
+               width: 25rem;
+               height: 5rem;
+               font-size: 2rem;
+               border: 1px solid black;
+               border-radius: 10px;
+               padding: 0px;
+               padding-left: 1rem;
+               padding-right: 1rem;
+          }
+
+          button {
+               width: 25rem;
+               height: 5rem;
+               font-size: 2rem;
+               border: 1px solid black;
+               border-radius: 10px;
+          }
+     </style>
+</head>
+
+<body>
+     <center>
+          <form method="post">
+               <input type="text" placeholder="Enter Name :" id="inputName"><br><br>
+               <button type="button" onclick="changeType()">Change HTML Element</button>
+          </form>
+     </center>
+     <script>
+          function changeType(){
+               if(document.getElementById("inputName").type=="text"){
+                    document.getElementById("inputName").type="date";
+               }
+               else{
+                    document.getElementById("inputName").type="text";
+               }
+          }
+     </script>
+</body>
+
+</html>

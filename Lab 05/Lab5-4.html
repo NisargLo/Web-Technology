@@ -85,8 +85,12 @@
           </form>
      </div>
      <script>
-          pass_pattern1 = /[!@#$%^&*()_+-=:";'<>,./?]{1,}[0-9]{1,}/;
+          pass_pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=:";'<>,./?]).{8,12}$/;
+          pass_regex = new RegExp(pass_pattern);
           email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          email_regex = new RegExp(email_pattern);
+          enrollment_pattern = /[0-9]{11}/;
+          enrollment_regex = new RegExp(enrollment_pattern);
           us = document.getElementById("username");
           em = document.getElementById("email");
           dobInput = document.getElementById("dobInput");
@@ -109,7 +113,7 @@
                }
           }
           function validateEmail() {
-               if (!email_pattern.test(em.value)) {
+               if (!email_regex.test(em.value)) {
                     alert("Enter valid email");
                }
           }
@@ -117,7 +121,7 @@
                if (pass.value.length < 8 || pass.value.length > 12) {
                     alert("Password must be between 8-12 characters.");
                }
-               if (!pass_pattern1.test(pass.value)) {
+               if (!pass_regex.test(pass.value)) {
                     alert("Password must contain any 1 number & 1 special character.");
                }
           }
@@ -139,7 +143,7 @@
                }
           }
           function validateEnrollmentNo() {
-               if (en.value.length !== 11) {
+               if (!enrollment_regex.test(en.value)) {
                     alert("Enter valid enrollment number.");
                }
           }

@@ -1,0 +1,90 @@
+<!-- 
+     If the mouse is over the heading should turn yellow and if the mouse goes out of the heading it should turn black.
+     If ƒndtime button is clicked show time and date information.
+     If button named “red” is clicked, background should change to red and If button named “green” is clicked, background should change to green. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab6-8</title>
+     <style>
+          * {
+               font-size: 1.5rem;
+          }
+
+          button {
+               padding: 0.5rem;
+               border: 1px solid black;
+               border-radius: 10px;
+          }
+
+          h1 {
+               padding: 0px;
+               width: 5.5rem;
+          }
+     </style>
+</head>
+
+<body id="wholebody">
+     <center>
+          <div>
+               <h1 id="myHeading">Heading</h1>
+          </div><br>
+          <div>
+               <p id="showDateTime">Click below button to see date & time.</p>
+               <button type="button" id="findTime" onclick="giveDT()">Find Time</button>
+          </div><br><br><br>
+          <div>
+               <button type="button" onclick="displayRed()">Red</button>
+               <button type="button" onclick="displayGreen()">Green</button>
+          </div>
+     </center>
+     <script>
+          myHeading = document.getElementById("myHeading");
+          myHeading.addEventListener("mouseover", headingOver);
+          myHeading.addEventListener("mouseout", headingOut);
+          d_and_t = document.getElementById("showDateTime");
+          colorChange = document.getElementById("wholebody");
+          function headingOver() {
+               myHeading.style.color = "yellow";
+          }
+          function headingOut() {
+               myHeading.style.color = "black";
+          }
+          function giveDT() {
+               d = new Date();
+               if (d_and_t.innerHTML == d) {
+                    d_and_t.innerHTML = "Date & time is same.";
+               }
+               else {
+                    d_and_t.innerHTML = d;
+               }
+          }
+          function displayRed() {
+               if (colorChange.style.backgroundColor == "white") {
+                    colorChange.style.backgroundColor = "red";
+                    d_and_t.style.color = "white";
+               }
+               else {
+                    colorChange.style.backgroundColor = "white";
+                    d_and_t.style.color = "black";
+               }
+          }
+          function displayGreen() {
+               if (colorChange.style.backgroundColor == "white") {
+                    colorChange.style.backgroundColor = "green";
+                    d_and_t.style.color = "white";
+               }
+               else {
+                    colorChange.style.backgroundColor = "white";
+                    d_and_t.style.color = "black";
+               }
+          }
+     </script>
+</body>
+
+</html>

@@ -27,7 +27,7 @@
                if (s.includes(event.key) && document.body.style.backgroundColor == "white") {
                     document.body.style.backgroundColor = "blue";
                }
-               else {
+               else if (s.includes(event.key)) {
                     document.body.style.backgroundColor = "white";
                }
           });

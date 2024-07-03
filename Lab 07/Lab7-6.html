@@ -1,0 +1,34 @@
+<!-- Demonstrate the Array and Object Destructuring. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab7-6</title>
+</head>
+
+<body>
+     <script>
+          numbers = [1, 2, 3, 4, 5];
+          const [first, second, ...rest] = numbers;
+          console.log(first);
+          console.log(second);
+          console.log(rest);
+
+          obj = {
+               f: 6,
+               g: 7,
+               h: 8,
+               i: 9,
+               j: 10
+          }
+          const { f, g, ...rest_all } = obj;
+          console.log(f);
+          console.log(g);
+          console.log(rest_all);
+     </script>
+</body>
+
+</html>

@@ -11,7 +11,18 @@
 
 <body>
      <script>
+          num = parseInt(prompt("Enter number :"));
+          class Numbers {
+               constructor(num) {
+                    this.num = num;
+               }
 
+               displayNum() {
+                    console.log("Your Number - " + this.num);
+               }
+          }
+          obj = new Numbers(num);
+          obj.displayNum();
      </script>
 </body>
 

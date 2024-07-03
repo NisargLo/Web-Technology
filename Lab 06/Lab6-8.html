@@ -29,7 +29,7 @@
      </style>
 </head>
 
-<body id="wholebody">
+<body>
      <center>
           <div>
                <h1 id="myHeading">Heading</h1>
@@ -48,7 +48,7 @@
           myHeading.addEventListener("mouseover", headingOver);
           myHeading.addEventListener("mouseout", headingOut);
           d_and_t = document.getElementById("showDateTime");
-          colorChange = document.getElementById("wholebody");
+          colorChange = document.body;
           function headingOver() {
                myHeading.style.color = "yellow";
           }

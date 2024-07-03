@@ -1,0 +1,32 @@
+<!-- Demonstrate the difference between let and var. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab7-2</title>
+</head>
+
+<body>
+     <script>
+          function display() {
+               let a = 10;
+               var b = 20;
+               if (true) {
+                    let c = 30;
+                    var d = 40;
+                    const e = 50;
+                    f = 60;
+                    console.log(a, b, c, d, e);
+               }
+               console.log(a, b, d);
+          }
+          display();
+          console.log(f);
+          // console.log(a,b,c,d); This can't happen as scope of a,b,d is in display(), and scope of c,e is in if(){} and f is global variable. 
+     </script>
+</body>
+
+</html>

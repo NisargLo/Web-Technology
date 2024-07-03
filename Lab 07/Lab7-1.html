@@ -1,0 +1,38 @@
+<!-- WAP to demonstrate callbacks in JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab7-1</title>
+</head>
+
+<body>
+     <script>
+          a = prompt("Enter Number 1 :");
+          b = prompt("Enter Number 2 :");
+          myCalc(a, b, myAdd, mySub, myMul, myDiv);
+          function myCalc(a, b, myAdd, mySub, myMul, myDiv) {
+               myAdd(a, b);
+               mySub(a, b);
+               myMul(a, b);
+               myDiv(a, b);
+          }
+          function myAdd(a, b) {
+               console.log("Sum : " + (a + b));
+          }
+          function mySub(a, b) {
+               console.log("Sub : " + (a - b));
+          }
+          function myMul(a, b) {
+               console.log("Mul : " + (a * b));
+          }
+          function myDiv(a, b) {
+               console.log("Div : " + (a / b));
+          }
+     </script>
+</body>
+
+</html>

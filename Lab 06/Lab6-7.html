@@ -7,10 +7,97 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lab6-7</title>
+     <style>
+          body {
+               font-family: Arial, sans-serif;
+               text-align: center;
+          }
+
+          input[type=text],
+          button {
+               margin-top: 0.5rem;
+               padding: 0.5rem;
+               font-size: 1rem;
+               border: 1px solid black;
+               border-radius: 10px;
+          }
+
+          button {
+               cursor: pointer;
+          }
+
+          h2 {
+               margin-top: 1.5rem;
+               font-size: 2rem;
+          }
+
+          table {
+               margin: auto;
+               border-collapse: collapse;
+               width: 20rem;
+          }
+
+          th,
+          td {
+               padding: 0.5rem;
+          }
+     </style>
 </head>
 
 <body>
+     <h2>CRUD Operations on Array</h2>
+     <form id="addItemForm">
+          <input type="text" id="newItem" placeholder="Enter new item :">
+          <button type="button" onclick="addItem()">Add Item</button>
+     </form>
+     <br><br>
+     <table id="itemTableBody">
+     </table>
 
+     <script>
+          let items = [];
+
+          function addItem() {
+               let newItem = document.getElementById('newItem').value.trim();
+               if (newItem !== '') {
+                    items.push(newItem);
+                    document.getElementById('newItem').value = '';
+                    displayItems();
+               }
+          }
+
+          function displayItems() {
+               let mytable = document.getElementById('itemTableBody');
+               mytable.innerHTML = '';
+               for (let index = 0; index < items.length; index++) {
+                    let item = items[index];
+                    let row = mytable.insertRow();
+                    let itemCell = row.insertCell(0);
+                    let editCell = row.insertCell(1);
+                    let deleteCell = row.insertCell(2);
+                    itemCell.textContent = item;
+                    editCell.innerHTML = `<button onclick="editItem(${index})">Edit</button>`;
+                    deleteCell.innerHTML = `<button onclick="deleteItem(${index})">Delete</button>`;
+               }
+          }
+
+          function editItem(index) {
+               let updatedItem = prompt('Enter updated item:',items[index]);
+               if (updatedItem !== null) {
+                    items[index] = updatedItem.trim();
+                    displayItems();
+               }
+          }
+
+          function deleteItem(index) {
+               if (confirm('Are you sure you want to delete this item?')) {
+                    items.splice(index, 1);
+                    displayItems();
+               }
+          }
+
+          displayItems();
+     </script>
 </body>
 
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CRUD Operations on Array of Objects</title>
+     <style>
+          body {
+               font-family: Arial, sans-serif;
+               text-align: center;
+          }
+
+          input[type=text],
+          button {
+               margin-top: 0.5rem;
+               padding: 0.5rem;
+               font-size: 1rem;
+               border: 1px solid black;
+               border-radius: 10px;
+          }
+
+          button {
+               cursor: pointer;
+          }
+
+          h2 {
+               margin-top: 1.5rem;
+               font-size: 2rem;
+          }
+
+          table {
+               margin: auto;
+               border-collapse: collapse;
+               width: 20rem;
+          }
+
+          th,
+          td {
+               padding: 0.5rem;
+          }
+     </style>
+</head>
+
+<body>
+     <h2>CRUD Operations on Array of Objects</h2>
+     <form id="addItemForm">
+          <input type="text" id="newItemName" placeholder="Enter item name:">
+          <input type="text" id="newItemDescription" placeholder="Enter item description:">
+          <button type="button" onclick="addItem()">Add Item</button>
+     </form>
+     <br><br>
+     <table id="itemTableBody">
+     </table>
+
+     <script>
+          let items = [];
+
+          function addItem() {
+               let newItemName = document.getElementById('newItemName').value.trim();
+               let newItemDescription = document.getElementById('newItemDescription').value.trim();
+               if (newItemName !== '' && newItemDescription !== '') {
+                    let newItem = {
+                         name: newItemName,
+                         description: newItemDescription
+                    };
+                    items.push(newItem);
+                    document.getElementById('newItemName').value = '';
+                    document.getElementById('newItemDescription').value = '';
+                    displayItems();
+               }
+          }
+
+          function displayItems() {
+               let mytable = document.getElementById('itemTableBody');
+               mytable.innerHTML = '';
+               for (let index = 0; index < items.length; index++) {
+                    let item = items[index];
+                    let row = mytable.insertRow();
+                    let nameCell = row.insertCell(0);
+                    let descriptionCell = row.insertCell(1);
+                    let editCell = row.insertCell(2);
+                    let deleteCell = row.insertCell(3);
+                    nameCell.textContent = item.name;
+                    descriptionCell.textContent = item.description;
+                    editCell.innerHTML = `<button onclick="editItem(${index})">Edit</button>`;
+                    deleteCell.innerHTML = `<button onclick="deleteItem(${index})">Delete</button>`;
+               }
+          }
+
+          function editItem(index) {
+               let currentItem = items[index];
+               let updatedName = prompt('Enter updated item name:', currentItem.name);
+               let updatedDescription = prompt('Enter updated item description:', currentItem.description);
+               if (updatedName !== null && updatedDescription !== null) {
+                    items[index].name = updatedName.trim();
+                    items[index].description = updatedDescription.trim();
+                    displayItems();
+               }
+          }
+
+          function deleteItem(index) {
+               if (confirm('Are you sure you want to delete this item?')) {
+                    items.splice(index, 1);
+                    displayItems();
+               }
+          }
+
+          displayItems();
+     </script>
+</body>
+
+</html>

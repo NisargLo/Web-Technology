@@ -13,11 +13,10 @@
      <script>
           a = parseInt(prompt("Enter number 1 :"));
           b = parseInt(prompt("Enter number 2 :"));
-          x = (a, b) => {
-               return "Sum - " + (a + b)
-          };
-          console.log(x(a, b));
-
+          sum = ()=> a+b;
+          multiply = ()=> a*b;  
+          console.log("Sum - "+sum(a, b));
+          console.log("Multiply - "+multiply(a, b));
           addEventListener("keypress", (event) => {
                console.log(event.key);
           });

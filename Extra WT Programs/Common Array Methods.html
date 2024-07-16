@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Commonly used array methods</title>
+</head>
+
+<body>
+     <h1>Commonly used array methods</h1>
+     <script>
+          myArray = [1, 2, 3, 4, 5];
+
+          // Adding elements:
+          myArray.push(6);
+          console.log('After push:', myArray); // [1, 2, 3, 4, 5, 6]
+
+          myArray.unshift(0);
+          console.log('After unshift:', myArray); // [0, 1, 2, 3, 4, 5, 6]
+
+          // Removing elements:
+          myArray.pop();
+          console.log('After pop:', myArray); // [0, 1, 2, 3, 4, 5]
+
+          myArray.shift();
+          console.log('After shift:', myArray); // [1, 2, 3, 4, 5]
+
+          // Sorting and reversing:
+          myArray.sort();
+          console.log('After sort:', myArray); // [1, 2, 3, 4, 5]
+
+          myArray.reverse();
+          console.log('After reverse:', myArray); // [5, 4, 3, 2, 1]
+
+          // Slicing and joining:
+          const slicedArray = myArray.slice(1, 3);
+          console.log('Sliced array:', slicedArray); // [4, 3]
+
+          const joinedString = myArray.join(', ');
+          console.log('Joined string:', joinedString); // "5, 4, 3, 2, 1"
+
+          // Searching and filtering:
+          const hasThree = myArray.includes(3);
+          console.log('Includes 3:', hasThree); // true
+
+          const evenNumbers = myArray.filter(num => num % 2 === 0);
+          console.log('Even numbers:', evenNumbers); // [4, 2]
+
+          // Iterating:
+          myArray.forEach(item => console.log('Iterating:', item));
+
+          const sum = myArray.reduce((acc, curr) => acc + curr, 0);
+          console.log('Sum:', sum); // 15 
+
+          // Finding elements:
+          const firstEven = myArray.find(num => num % 2 === 0);
+          console.log('First even number:', firstEven); // 4
+
+          // Mapping:
+          myArray = myArray.map(num => num * num);
+          console.log('Squared array:', myArray); // [25, 16, 9, 4, 1]
+
+          // Each() and every() methods:
+          const numbers = [1, 2, 20, 4, 5];
+
+          b1 = numbers.some(num => num > 10);
+          console.log("Any NO greater that 10? : " + b1);
+
+          b2 = numbers.every(num => num > 10);
+          console.log("Every NO greater that 10? : " + b2);
+     </script>
+</body>
+
+</html>

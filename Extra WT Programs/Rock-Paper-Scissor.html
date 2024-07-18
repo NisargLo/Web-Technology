@@ -1,0 +1,135 @@
+<!-- Game of rock, paper, scissor -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+
+        input {
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .score {
+            width: 100%;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btnn {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        button {
+            padding: 0.5rem;
+            border-radius: 50%;
+            margin: 0.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            font-size: 1rem;
+        }
+
+        .you,
+        .ai {
+            font-weight: bolder;
+        }
+
+        #reset {
+            width: 5rem;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <div class="score">
+        <label>Score: </label>
+        <input type="text" id="score" readonly>
+    </div>
+    <div class="btnn">
+        <div class="myBtn">
+            <p class="you">You</p>
+            <div>
+                <button type="button" id="1" onclick="getValue(1)"><i class="fas fa-mountain"></i></button>
+            </div>
+            <div>
+                <button type="button" id="2" onclick="getValue(2)"><i class="fa-solid far fa-newspaper"></i></button>
+                <button type="button" id="3" onclick="getValue(3)"><i class="fa-solid fa-scissors"></i></button>
+            </div>
+        </div>
+        <div class="autoBtn">
+            <p class="ai">Computer</p>
+            <button type="button" id="4"></button>
+        </div>
+    </div>
+    <div>
+        <button type="button" id="reset" onclick="res()">Reset</button>
+    </div>
+    <script>
+        score = document.getElementById('score');
+        score.value = 0;
+        one = document.getElementById('1');
+        two = document.getElementById('2');
+        three = document.getElementById('3');
+
+        function getValue(val) {
+            let aiValue = display();
+            score = document.getElementById('score');
+            if ((val === 1 && aiValue === 3) || (val === 2 && aiValue === 1) || (val === 3 && aiValue === 2)) {
+                score.value++;
+                swal("You Win");
+            } 
+            else if ((val === 1 && aiValue === 2) || (val === 2 && aiValue === 3) || (val === 3 && aiValue === 1)) {
+                score.value--;
+                swal("You Lose");
+            }
+            else {
+                swal("Tie");
+            }
+            if (score.value < 0) {
+                swal("Try Again");
+                score.value = 0;
+            }
+        }
+        
+        function display() {
+            value = parseInt(Math.random() * 3 + 1);
+            dis = document.getElementById('4');
+            if (value == 1) {
+                dis.innerHTML = one.innerHTML;
+            }
+            else if (value == 2) {
+                dis.innerHTML = two.innerHTML;
+            }
+            else if (value == 3) {
+                dis.innerHTML = three.innerHTML;
+            }
+            return value;
+        }
+
+        function res() {
+            score.value = 0;
+            dis.innerHTML = "";
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

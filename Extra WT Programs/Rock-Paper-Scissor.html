@@ -42,6 +42,48 @@
             width: 3.5rem;
             height: 3.5rem;
             font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s ease-in-out;
+        }
+
+        .one:hover, .two:hover, .three:hover, .four:hover, #reset:hover {
+            transform: scale(1.2);
+        }
+
+        .one {
+            background-color: #f0897f;
+            border: 1px solid #f0897f;
+        }
+
+        .one:hover{
+            background-color: #e95f52;
+        }
+
+        .two {
+            background-color: #9480c4;
+            border: 1px solid #9480c4;
+        }
+
+        .two:hover{
+            background-color: #9257d4;
+        }
+
+        .three {
+            background-color: #aacb77;
+            border: 1px solid #aacb77;
+        }
+
+        .three:hover{
+            background-color: #6ac341;
+        }
+
+        .four{
+            background-color: rgb(247, 247, 116);
+            border: 1px solid rgb(247, 247, 116);
+        }
+
+        .four:hover{
+            background-color: rgb(236, 236, 67);
         }
 
         .you,
@@ -54,6 +96,13 @@
             height: auto;
             margin-top: 1rem;
             border-radius: 10px;
+            background-color: cadetblue;
+            color: white;
+            border: 1px solid cadetblue;
+        }
+
+        #reset:hover {
+            background-color: teal;
         }
     </style>
 </head>
@@ -67,16 +116,16 @@
         <div class="myBtn">
             <p class="you">You</p>
             <div>
-                <button type="button" id="1" onclick="getValue(1)"><i class="fas fa-mountain"></i></button>
+                <button type="button" id="1" class="one" onclick="getValue(1)"><i class="fas fa-mountain"></i></button>
             </div>
             <div>
-                <button type="button" id="2" onclick="getValue(2)"><i class="fa-solid far fa-newspaper"></i></button>
-                <button type="button" id="3" onclick="getValue(3)"><i class="fa-solid fa-scissors"></i></button>
+                <button type="button" id="2" class="two" onclick="getValue(2)"><i class="fa-solid far fa-newspaper"></i></button>
+                <button type="button" id="3" class="three" onclick="getValue(3)"><i class="fa-solid fa-scissors"></i></button>
             </div>
         </div>
         <div class="autoBtn">
             <p class="ai">Computer</p>
-            <button type="button" id="4"></button>
+            <button type="button" id="4" class="four"></button>
         </div>
     </div>
     <div>
@@ -95,7 +144,7 @@
             if ((val === 1 && aiValue === 3) || (val === 2 && aiValue === 1) || (val === 3 && aiValue === 2)) {
                 score.value++;
                 swal("You Win");
-            } 
+            }
             else if ((val === 1 && aiValue === 2) || (val === 2 && aiValue === 3) || (val === 3 && aiValue === 1)) {
                 score.value--;
                 swal("You Lose");
@@ -108,7 +157,7 @@
                 score.value = 0;
             }
         }
-        
+
         function display() {
             value = parseInt(Math.random() * 3 + 1);
             dis = document.getElementById('4');

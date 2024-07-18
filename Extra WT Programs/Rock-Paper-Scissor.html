@@ -14,12 +14,16 @@
         * {
             box-sizing: border-box;
             font-size: 1.5rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         input {
             border-radius: 10px;
             width: 150px;
             text-align: center;
+            background-color: rgb(82, 102, 192);
+            border: 1px solid rgb(82, 102, 192);
+            color: white;
         }
 
         .score {
@@ -43,7 +47,7 @@
             height: 3.5rem;
             font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.25s ease-in-out;
+            transition: transform 0.2s ease-in-out;
         }
 
         .one:hover, .two:hover, .three:hover, .four:hover, #reset:hover {
@@ -104,12 +108,16 @@
         #reset:hover {
             background-color: teal;
         }
+        
+        body{
+            background-color: rgb(191, 148, 92);
+        }
     </style>
 </head>
 
 <body align="center">
     <div class="score">
-        <label>Score: </label>
+        <label>Scoreboard: </label>
         <input type="text" id="score" readonly>
     </div>
     <div class="btnn">

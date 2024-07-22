@@ -23,8 +23,8 @@ setTimeout(() => {
 
 setTimeout(() => {
      fs.rename("NewFile.txt","NewRenamedFile.txt",(err)=>{});
-},100);
+},110);
 
 setTimeout(() => {
      fs.unlink("NewRenamedFile.txt",(err)=>{});
-},100);
+},120);

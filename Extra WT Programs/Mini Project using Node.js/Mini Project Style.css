@@ -1,4 +1,4 @@
-<style>
+<style> /*This style tag is used so that css is not printed on webpage when using Node.js*/ 
 
 * {
      box-sizing: border-box;
@@ -57,4 +57,4 @@ main {
      font-size: 7rem;
 }
 
-</style>
+</style>  /*This style tag is used so that css is not printed on webpage when using Node.js*/ 

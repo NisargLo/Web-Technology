@@ -5,7 +5,7 @@ const http = require('http');
 // Create an HTTP server
 const server = http.createServer((req, res) => {
      // Log the request method and URL
-     console.log(`Received ${req.method} request for ${req.url}`);
+     console.log(`\nReceived ${req.method} request for ${req.url}`);
 
      // Set response headers and status code
      res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -18,8 +18,8 @@ const server = http.createServer((req, res) => {
 });
 
 // Start the server to listen on port 3000
-server.listen(3000, '127.0.0.1', () => {
-     console.log('Server running at http://127.0.0.1:3000/');
+server.listen(3100, '127.0.0.1', () => {
+     console.log('Server running at http://127.0.0.1:3100/');
 });
 
 // Access server information

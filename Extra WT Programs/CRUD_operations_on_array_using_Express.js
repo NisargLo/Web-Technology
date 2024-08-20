@@ -4,11 +4,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const port = 3100;
-app.listen(port, () => {
-    console.log(`Server is listening at http://localhost:${port}`);
-});
+require('dotenv').config({ path: './Lab WT/.env' });
 
 let list = [];
 
@@ -143,4 +139,22 @@ app.delete('/list/:index', (req, res) => {
     } else {
         res.status(404).send('Index out of bounds.');
     }
+});
+
+
+// Search items
+app.get('/list/search/:value', (req, res) => {
+    const value = req.params.value;
+    const result = list.filter(item => item.includes(value));
+    res.send(result);
+});
+
+
+const port = process.env.PORT;
+app.listen(port, (err) => {
+    if (err) {
+        console.log(`Error in listening on port ${port}`);
+        return;
+    }
+    console.log(`App is listening on port ${port}`);
 });

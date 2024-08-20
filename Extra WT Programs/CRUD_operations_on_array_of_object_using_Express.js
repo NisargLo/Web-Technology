@@ -5,11 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const port = 3100;
-app.listen(port, () => {
-     console.log(`Server is listening at http://localhost:${port}`);
-});
+require('dotenv').config({ path: './Lab WT/.env' });
 
 let list = [];
 
@@ -79,4 +75,21 @@ app.delete('/list/:id', (req, res) => {
      }
      list.splice(index, 1);
      res.status(200).send('Object deleted.');
+});
+
+
+// Search items
+app.get('/list/search/:value', (req, res) => {
+     const value = req.params.value;
+     const result = list.filter(item => item.id == value);
+     res.send(result);
+});
+
+const port = process.env.PORT;
+app.listen(port, (err) => {
+     if (err) {
+          console.log(`Error in listening on port ${port}`);
+          return;
+     }
+     console.log(`App is listening on port ${port}`);
 });

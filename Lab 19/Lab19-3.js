@@ -2,6 +2,7 @@
 
 const express = require('express');
 const fs=require('fs');
+require('dotenv').config();
 
 const app = express();
 
@@ -35,8 +36,7 @@ app.get('/services', (req, res) => {
      res.send(services);
 });
 
-const port = 3100;
-
+const port = process.env.PORT;
 app.listen(port, (err) => {
      if (err) {
           console.log(`Error in listening on port ${port}`);

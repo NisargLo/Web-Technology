@@ -1,6 +1,7 @@
 // Create a hello world webapp using ExpressJS
 
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
 
@@ -8,8 +9,7 @@ app.get('/', (req, res) => {
      res.send('Hello World');
 });
 
-const port = 3100;
-
+const port = process.env.PORT;
 app.listen(port, (err) => {
      if (err) {
           console.log(`Error in listening on port ${port}`);

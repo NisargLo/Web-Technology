@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 require('dotenv').config();
 
-mongoose.connect(process.env.DATABASE_URL).then(() => {
+mongoose.connect(process.env.MongoDB_Atlas_URL).then(() => {
      console.log('MongoDB Connected');
 
      // Display all documents

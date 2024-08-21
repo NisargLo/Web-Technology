@@ -16,27 +16,34 @@ mongoose.connect(process.env.MongoDB_Atlas_URL).then(() => {
           res.send(data);
      });
 
-     // Add a new document
-     app.post('/add', async (req, res) => {
-          const { ID, Name, Class, Roll_No } = req.body;
-          const ans = await Model.create({ ID, Name, Class, Roll_No });
-          res.send(ans);
+     // Add a new document by save() method
+     app.post('save/', async (req, res) => {
+          newData = new Model({...req.body});
+          const result = await newData.save();
+          res.send(result);
      });
 
-     // Search first document by parameter
+     // Add a new document by create() method
+     app.post('create/', async (req, res) => {
+          const { ID, Name, Class, Roll_No } = req.body;
+          const result = await Model.create({ ID, Name, Class, Roll_No });
+          res.send(result);
+     });
+
+     // Get first document by parameter
      app.get('/first/:parameter', async (req, res) => {
           const data = await Model.findOne({ ID: req.params.parameter });
           res.send(data);
      });
 
-     // Search all document by parameter
+     // Get all document by parameter
      app.get('/all/:parameter', async (req, res) => {
           const data = await Model.find({ ID: req.params.parameter });
           res.send(data);
      });
 
 
-     // Search unique document by MongoDB Atlas ID
+     // Get unique document by MongoDB Atlas ID
      app.get('/atlas/:id', async (req, res) => {
           const data = await Model.findById(req.params.id);
           res.send(data);
@@ -46,8 +53,8 @@ mongoose.connect(process.env.MongoDB_Atlas_URL).then(() => {
      app.put('/update/name/:parameter', async (req, res) => {
           const stu = await Model.findOne({ ID: req.params.parameter });
           stu.Name = req.body.Name;
-          const ans = await stu.save();
-          res.send(ans);
+          const result = await stu.save();
+          res.send(result);
      });
 
      // Update full document

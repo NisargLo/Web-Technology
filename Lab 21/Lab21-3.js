@@ -68,7 +68,17 @@ mongoose.connect(process.env.MongoDB_Atlas_URL).then(() => {
           await Model.deleteMany({ ID: req.params.id });
           res.send("One/Many Deleted.");
      });
-
+     
+     // Search name in all documents
+     app.get('/search/:parameter', async (req, res) => {
+          const result = await Model.find({
+               Name: {
+                    $regex: req.params.parameter
+               }
+          });
+          res.send(result);
+     });
+     
 
      /*
           -> For My ID:-

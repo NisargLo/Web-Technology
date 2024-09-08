@@ -1,3 +1,26 @@
 *.class
 .env
 tempCodeRunnerFile.js
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+build/
+dist/
+out/
+
+# Environment files
+.env
+.env.local
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.log
+
+# Dependency lock files
+yarn.lock
+package-lock.json

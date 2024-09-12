@@ -2,7 +2,7 @@
 
 const express = require('express');
 const fs=require('fs');
-require('dotenv').config({ path: './Lab WT/.env' });
+require('dotenv').config({ path: './Sem-3___Web-Technology/.env' });
 
 const app = express();
 

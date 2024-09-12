@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Model = require('./Models/Product_Model');
 const app = express();
 app.use(express.json());
-require('dotenv').config({ path: './Lab WT/.env' });
+require('dotenv').config({ path: './Sem-3___Web-Technology/.env' });
 
 mongoose.connect(process.env.MongoDB_Atlas_URL).then(() => {
      console.log('MongoDB Connected');

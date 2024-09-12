@@ -8,9 +8,11 @@ function PropsUse(props) {
     }
     tempString += i + "";
     return (
-        <div>
-            <h2>{tempString}</h2>
-        </div>
+      <div>
+        <center>
+          <h2>{tempString}</h2>
+        </center>
+      </div>
     );
 }
 

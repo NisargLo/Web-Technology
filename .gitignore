@@ -22,6 +22,4 @@ out/
 *.log
 
 # Extra files
-reactjs/src/extra files from src folder.zip
-reactjs/public/extra files from public folder.zip
 /reactjs/others

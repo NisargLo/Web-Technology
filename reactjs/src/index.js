@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+//import App from "./App";
 
 //import FunctionComponent from "./Lab9_1";
 //import PropsUse from "./Lab 10/Lab10_1";

@@ -1,7 +1,7 @@
 // Create a webapp with 5 pages like about, contact etc.. using ExpressJS.
 
 const express = require('express');
-require('dotenv').config({ path: './Sem-3___Web-Technology/.env' });
+require('dotenv').config({ path: '../.env' });
 
 const app = express();
 

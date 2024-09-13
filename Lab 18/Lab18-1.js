@@ -1,7 +1,7 @@
 // Create a hello world webapp using “http” core module in NodeJS
 
 const http = require("http");
-require('dotenv').config({ path: './Sem-3___Web-Technology/.env' });
+require('dotenv').config({ path: '../.env' });
 
 const server = http.createServer((req, res) => {
      res.statuscode=200;

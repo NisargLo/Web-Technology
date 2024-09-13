@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const http = require("http");
-require('dotenv').config({ path: './Sem-3___Web-Technology/.env' });
+require('dotenv').config({ path: '../.env' });
 
 const server = http.createServer((req, res) => {
      if(req.url === "/home"){

@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const http = require("http");
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: './Lab WT/.env' });
 
 const server = http.createServer((req, res) => {
      if(req.url === "/home"){

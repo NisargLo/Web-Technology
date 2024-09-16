@@ -1,7 +1,7 @@
 // Create a webapp with 5 pages like about, contact etc.. using “http” core module in NodeJS.
 
 const http = require("http");
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: './Lab WT/.env' });
 
 const server = http.createServer((req, res) => {
      if(req.url === "/home"){

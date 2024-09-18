@@ -10,29 +10,31 @@ const DisplayProducts = () => {
     ];
 
     return (
-        <>
-            <h1 class="m-3">Product Details :-</h1>
-            <table class="table table-bordered border-primary mx-3 w-auto">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {products.map((product) => {
-                        return (
-                            <tr key={product.id}>
-                                <td>{product.id}</td>
-                                <td>{product.name}</td>
-                                <td>{product.price}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </>
+        <div className="container-fluid d-flex justify-content-center w-100">
+            <div className="w-25">
+                <h1 class="my-3 text-center">Product Details</h1>
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map((product) => {
+                            return (
+                                <tr key={product.id}>
+                                    <td>{product.id}</td>
+                                    <td>{product.name}</td>
+                                    <td>${product.price}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 }
 

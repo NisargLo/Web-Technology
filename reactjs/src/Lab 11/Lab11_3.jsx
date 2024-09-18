@@ -10,29 +10,31 @@ const DisplayStudents = () => {
     ];
 
     return (
-        <>
-            <h1 class="m-3">Student Details :-</h1>
-            <table class="table table-bordered border-primary mx-3 w-auto">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Grade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {students.map((student) => {
-                        return (
-                            <tr key={student.id}>
-                                <td>{student.id}</td>
-                                <td>{student.name}</td>
-                                <td>{student.grade}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </>
+        <div className="container-fluid d-flex justify-content-center w-100">
+            <div className="w-25">
+                <h1 class="my-3 text-center">Student Details</h1>
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {students.map((student) => {
+                            return (
+                                <tr key={student.id}>
+                                    <td>{student.id}</td>
+                                    <td>{student.name}</td>
+                                    <td>{student.grade}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 }
 

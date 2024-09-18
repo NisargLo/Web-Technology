@@ -10,27 +10,29 @@ const DisplayFaculties = () => {
     ];
 
     return (
-        <>
-            <h1 class="m-3">Faculty Details :-</h1>
-            <table class="table table-bordered border-primary mx-3 w-auto">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {faculties.map((faculty) => {
-                        return (
-                            <tr key={faculty.id}>
-                                <td>{faculty.id}</td>
-                                <td>{faculty.name}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </>
+        <div className="container-fluid d-flex justify-content-center w-100">
+            <div className="w-25">
+                <h1 class="my-3 text-center">Faculty Details</h1>
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {faculties.map((faculty) => {
+                            return (
+                                <tr key={faculty.id}>
+                                    <td>{faculty.id}</td>
+                                    <td>{faculty.name}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 }
 

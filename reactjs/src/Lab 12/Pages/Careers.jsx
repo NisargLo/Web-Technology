@@ -1,11 +1,11 @@
-function Blog() {
+function Careers() {
      return (
           <>
                <center>
-                    <h1>Blog</h1>
+                    <h1>Careers</h1>
                </center>
           </>
      );
 }
 
-export default Blog;
+export default Careers;

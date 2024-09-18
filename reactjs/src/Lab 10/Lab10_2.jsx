@@ -1,9 +1,9 @@
 //Demonstrate the Event Handling in ReactJS. 
 
-function Event(){
+function Event() {
     return (
         <button onClick={
-            ()=>{
+            () => {
                 return alert("Event Occured!");
             }
         }>Click Me</button>

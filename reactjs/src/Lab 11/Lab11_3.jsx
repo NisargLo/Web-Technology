@@ -1,13 +1,13 @@
 // Display Students stored in array using ReactJS
 
-const DisplayStudents = ()=>{
+const DisplayStudents = () => {
     const students = [
-        {id: 1, name: 'Alice', grade: 'A'},
-        {id: 2, name: 'Bob', grade: 'B'},
-        {id: 3, name: 'Charlie', grade: 'C'},
-        {id: 4, name: 'David', grade: 'B'},
-        {id: 5, name: 'Eve', grade: 'A'}
-    ];    
+        { id: 1, name: 'Alice', grade: 'A' },
+        { id: 2, name: 'Bob', grade: 'B' },
+        { id: 3, name: 'Charlie', grade: 'C' },
+        { id: 4, name: 'David', grade: 'B' },
+        { id: 5, name: 'Eve', grade: 'A' }
+    ];
 
     return (
         <>
@@ -21,8 +21,8 @@ const DisplayStudents = ()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {students.map((student)=>{
-                        return(
+                    {students.map((student) => {
+                        return (
                             <tr key={student.id}>
                                 <td>{student.id}</td>
                                 <td>{student.name}</td>

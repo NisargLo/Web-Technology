@@ -3,7 +3,7 @@
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Product from "./Pages/Products";
+import Products from "./Pages/Products";
 import Services from "./Pages/Services";
 import Not_Found from "./Pages/404 Page (Not Found)";
 import Blog from "./Pages/Blog";
@@ -15,7 +15,7 @@ import Login from "./Pages/Login";
 import Portfolio from "./Pages/Portfolio";
 import Privacy_Policy from "./Pages/Privacy Policy";
 import Reviews from "./Pages/Reviews";
-import Layout from "./Page Layout";
+import Layout from "./15 Pages Layout.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Product" element={<Product />} />
+          <Route path="/Products" element={<Products />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Not_Found" element={<Not_Found />} />
           <Route path="/Blog" element={<Blog />} />

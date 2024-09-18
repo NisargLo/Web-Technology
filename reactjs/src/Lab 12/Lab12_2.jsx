@@ -3,9 +3,9 @@
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Product from "./Pages/Products";
-import Services from "./Pages/Services";
-import Layout from "./Page Layout";
+import Products from "./Pages/Products";
+import Login from "./Pages/Login";
+import Layout from "./5 Pages Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Product" element={<Product />} />
-          <Route path="/Services" element={<Services />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

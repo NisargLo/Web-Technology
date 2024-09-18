@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 //import Event from "./Lab 10/Lab10_2";
 //import {Greeting1, Greeting2, Greeting3} from "./Lab 10/Lab10_3";
 //import DisplayProducts from "./Lab 11/Lab11_4";
-import App from "./Lab 12/Lab12_1";
+import App from "./Lab 12/Lab12_3";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

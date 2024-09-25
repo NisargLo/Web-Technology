@@ -1,3 +1,5 @@
+//Demonstrate useEffect hook in ReactJS
+
 import { useState, useEffect } from "react";
 
 const apiURL = "https://66eac91655ad32cda47a64c9.mockapi.io/myStudents";

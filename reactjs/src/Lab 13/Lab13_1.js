@@ -1,3 +1,5 @@
+//Demonstrate useState hook in ReactJS.
+
 import { useState } from 'react';
 import './Lab13_1 Style.css';
 

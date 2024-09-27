@@ -3,4 +3,5 @@
 <h2>Languages: HTML, CSS & Javascript</h2>
 <h2>Frameworks: Bootstrap, ExpressJS</h2>
 <h2>Runtime Environment: NodeJS</h2>
-<h2>Library: ReactJS</h2></i>
+<h2>Library: ReactJS</h2>
+<h2>Cloud Service: MongoDB Atlas</h2></i>

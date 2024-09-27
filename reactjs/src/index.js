@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-//import App from "./App";
 
 //import FunctionComponent from "./Lab9_1";
 //import PropsUse from "./Lab 10/Lab10_1";
@@ -16,12 +14,5 @@ import Faculty from "./Lab 16/Lab16_2";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Faculty />
-  </React.StrictMode>
+	<Faculty />
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,5 +1,4 @@
 *.class
-.env
 tempCodeRunnerFile.js
 
 # Node.js dependencies
@@ -11,10 +10,6 @@ yarn-error.log
 build/
 dist/
 out/
-
-# Environment files
-.env
-.env.local
 
 # Editor/IDE files
 .vscode/

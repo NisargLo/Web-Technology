@@ -9,10 +9,11 @@ import './index.css';
 //import DisplaySProducts from "./Lab 11/Lab11_4";
 //import App from "./Lab 12/Lab12_3";
 //import { Counter, StudentsTable } from "./Lab 13/Lab13_2";
-import App from "./Lab 16/Lab16-2, Lab16-3 & Lab16-4/App";
+// import App from "./Lab 16/Lab16-2, Lab16-3 & Lab16-4/App";
+import StudentApp from "./Lab 15/Lab15-2";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<App />
+	<StudentApp />
 );

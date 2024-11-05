@@ -9,7 +9,8 @@
 
 /*
     In place of these smaller projects, I have developed a comprehensive web application called Compact Notes. 
-    Compact Notes is a MERN stack web application built using MongoDB, ExpressJS & ReactJS. This application allows users to create, read, update, and delete notes.
+    Compact Notes is a MERN stack web application built using MongoDB, ExpressJS & ReactJS. 
+    This application allows users to create, read, update, and delete notes.
 
     Project Link: https://github.com/NisargLo/Compact-Notes
 */
